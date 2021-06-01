@@ -8,15 +8,15 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - http:
-      paths:
-      - path: /transmission
-        pathType: Prefix
-        backend:
-          service:
-            name: transmission
-            port:
-              number: 9091
+    - http:
+        paths:
+          - path: /transmission
+            pathType: Prefix
+            backend:
+              service:
+                name: transmission
+                port:
+                  number: 9091
 
 ---
 apiVersion: v1
