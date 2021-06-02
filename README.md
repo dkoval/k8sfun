@@ -47,3 +47,10 @@ The above command performs the following:
 - Mounts `/path/to/k3s/manifests` directory on the host machine mounts to `/var/lib/rancher/k3s/server/manifests` so that k8s manifest files can be dropped in here for automatic deployment.
 - Mounts `/path/to/k3s/storage` directory from the host machine to `/var/lib/rancher/k3s/storage` as this is the default directory k3s stores data in. We can create k8s [Persistent Volume Claims](https://kubernetes.io/docs/concepts/storage/persistent-volumes) and they will be created here on the host machine.
 - `--k3s-server-arg` argument passes `--no-deploy=traefik` flag to k3s when the cluster is created preventing the default Traefik 1.x ingress controller from being installed.
+
+Now, install Traefik Proxy 2.x packaged as a Helm chart.
+
+```shell
+helm repo add traefik https://containous.github.io/traefik-helm-chart
+helm install traefik traefik/traefik
+```
