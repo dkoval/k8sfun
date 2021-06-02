@@ -59,14 +59,14 @@ spec:
             - configMapRef:
                 name: transmission
           volumeMounts:
-             - name: transmission-config
-               mountPath: /config
-             - name: transmission-volumes
-               mountPath: /downloads
-               subPath: downloads
-             - name: transmission-volumes
-               mountPath: /watch
-               subPath: watch
+            - name: transmission-config
+              mountPath: /config
+            - name: transmission-volumes
+              mountPath: /downloads
+              subPath: downloads
+            - name: transmission-volumes
+              mountPath: /watch
+              subPath: watch
       volumes:
         - name: transmission-config
           hostPath:

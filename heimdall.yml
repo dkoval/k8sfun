@@ -48,7 +48,9 @@ spec:
   template:
     metadata:
       labels:
-        app: heimdall      
+        app: heimdall
+      annotations:
+        heimdall.cfg: v1
     spec:
       containers:
         - name: heimdall
