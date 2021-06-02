@@ -1,12 +1,27 @@
 # k8sfun
 
-## Overview
-
 Spin up home media server by running essential applications in a containerized [k3s](https://github.com/rancher/k3s) cluster. 
 
-## Install k3d
+Table of Contents
 
-[k3d](https://github.com/rancher/k3d) is made for running a k3s cluster in Docker. Follow through https://github.com/rancher/k3d#get.
+To be continued ...
+
+
+## Prerequisites
+
+- Docker
+- k3d/k3s
+- kubectl
+- helm
+
+## Install tools
+
+| Tool | HOWTO |
+| --- | --- |
+| [Docker](https://docs.docker.com) is a platform for building, deploying and running containerized apps | [Install Docker](https://docs.docker.com/engine/install) |
+| [k3d](https://k3d.io) is made for running a k3s cluster in Docker | [Install k3d](https://k3d.io/#installation) |
+| [kubectl](https://kubernetes.io/docs/reference/kubectl) is a CLI tool for running commands against k8s clusters | [Install kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) |
+| [helm](https://helm.sh) is the package manager for k8s | [Install helm](https://helm.sh/docs/intro/install) |
 
 ## Create a new k3d cluster
 
