@@ -19,7 +19,7 @@ To be continued ...
 | Tool | HOWTO |
 | --- | --- |
 | [Docker](https://docs.docker.com) is a platform for building, deploying and running containerized apps | [Install Docker](https://docs.docker.com/engine/install) |
-| [k3d](https://k3d.io) is made for running a k3s cluster in Docker | [Install k3d](https://k3d.io/#installation) |
+| [k3s](https://k3s.io) is a lightweight CNCF certified k8s distribution, whilst [k3d](https://k3d.io) is made for running k3s clusters in Docker | [Install k3d](https://k3d.io/#installation) |
 | [kubectl](https://kubernetes.io/docs/reference/kubectl) is a CLI tool for running commands against k8s clusters | [Install kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) |
 | [helm](https://helm.sh) is the package manager for k8s | [Install helm](https://helm.sh/docs/intro/install) |
 
