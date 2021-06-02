@@ -29,16 +29,21 @@ Table of Contents
 
 ```shell
 k3d cluster create k8sfun \
+--api-port 6443 \
 -p 80:80@loadbalancer \
 -p 443:443@loadbalancer \
+-v /path/to/k3s/manifests:/var/lib/rancher/k3s/server/manifests \
+-v /path/to/k3s/storage:/var/lib/rancher/k3s/storage \
 -v /path/to/volumes:/mnt/volumes \
 -v $HOME/.config/:/mnt/config \
---api-port 6443 \
 --k3s-server-arg "--no-deploy=traefik"
 ```
 
-What's hust happened:
+The above command performs the following:
 
-- `localhost` ports `80` and `443` map to the k3s virtual loadbalancer. This will allow us to reach the ingress resources directly from the `localhost` on the host machine.
-- k3s's API-Server is configured to listen on port `6443` with that port mapped to the host system.
-- the cluster is deployed without the default Traefik Ingress Controller.
+- Creates a new k3s single-node k3s cluster named `k8sfun`.
+- Configures k3s's API-Server to listen on port `6443` with that port mapped to the host machine.
+- Publishes ports `80` and `443` to the host machine and mapps to the k3s virtual loadbalancer so that we can send external web traffic (http and https) to the cluster.
+- Mounts `/path/to/k3s/manifests` directory on the host machine mounts to `/var/lib/rancher/k3s/server/manifests` so that k8s manifest files can be dropped in here for automatic deployment.
+- Mounts `/path/to/k3s/storage` directory from the host machine to `/var/lib/rancher/k3s/storage` as this is the default directory k3s stores data in. We can create k8s [Persistent Volume Claims](https://kubernetes.io/docs/concepts/storage/persistent-volumes) and they will be created here on the host machine.
+- `--k3s-server-arg` argument passes `--no-deploy=traefik` flag to k3s when the cluster is created preventing the default Traefik 1.x ingress controller from being installed.
