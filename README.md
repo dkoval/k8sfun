@@ -7,6 +7,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Install tools](#install-tools)
 - [Create a new k3d cluster](#create-a-new-k3d-cluster)
+- [Troubleshooting](#troubleshooting)
 
 
 ## Prerequisites
@@ -54,4 +55,24 @@ Install Traefik Proxy v2 packaged as a Helm [chart](https://containous.github.io
 helm repo add traefik https://containous.github.io/traefik-helm-chart
 helm repo update
 helm install traefik traefik/traefik
+```
+
+## Troubleshooting
+
+- How do I configure Traefik v2 Ingress controller with `/sonarr` subpath?
+
+Set URL Base to `/sonarr` in Sonarr by editting `$HOME/.config/sonarr/config.xml` file.
+
+```xml
+<Config>
+  ...
+  <UrlBase>/sonarr</UrlBase>
+  ...
+</Config>
+```
+
+Apply changes by doing rolling restart of `sonarr` deployment.
+
+```shell
+kubectl rollout restart deploy sonarr
 ```
