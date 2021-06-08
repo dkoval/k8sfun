@@ -1,6 +1,6 @@
 # k8sfun
 
-Spin up a home media server by running essential applications in a containerized [k3s](https://github.com/rancher/k3s) cluster. 
+Automates a home media server setup by spinning up essential applications in a containerized [k3s](https://github.com/rancher/k3s) cluster. 
 
 Table of Contents
 
