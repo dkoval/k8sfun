@@ -7,7 +7,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Install tools](#install-tools)
 - [Create a new k3d cluster](#create-a-new-k3d-cluster)
-- [Troubleshooting](#troubleshooting)
+- [Almost there](#almost-there)
 
 
 ## Prerequisites
@@ -57,9 +57,9 @@ helm repo update
 helm install traefik traefik/traefik
 ```
 
-## Troubleshooting
+## Almost there
 
-- How do I configure Traefik v2 Ingress controller with `/sonarr` subpath?
+### How do I make Traefik v2 Ingress controller work with `/sonarr` subpath?
 
 Set URL Base to `/sonarr` in Sonarr by editting `$HOME/.config/sonarr/config.xml` file.
 
@@ -75,4 +75,22 @@ Apply changes by doing rolling restart of `sonarr` deployment.
 
 ```shell
 kubectl rollout restart deploy sonarr
+```
+
+### How do I make Traefik v2 Ingress controller work with `/jackett` subpath?
+
+Set URL Base to `/jackett` in Jackett by editting `$HOME/.config/Jackett/ServerConfig.json` file.
+
+```json
+{
+  ...
+  "BasePathOverride": "/jackett",
+  ...
+}
+```
+
+Apply changes by doing rolling restart of `jackett` deployment.
+
+```shell
+kubectl rollout restart deploy jackett
 ```
