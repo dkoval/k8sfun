@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
         - name: heimdall
-          image: ghcr.io/linuxserver/heimdall
+          image: linuxserver/heimdall:version-2.2.2
           envFrom:
             - configMapRef:
                 name: heimdall

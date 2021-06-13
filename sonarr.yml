@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
         - name: sonarr
-          image: ghcr.io/linuxserver/sonarr
+          image: linuxserver/sonarr:3.0.6.1196-ls107
           envFrom:
             - configMapRef:
                 name: sonarr

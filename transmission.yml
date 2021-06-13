@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
         - name: transmission
-          image: linuxserver/transmission:3.00-r2-ls88
+          image: linuxserver/transmission:3.00-r2-ls90
           envFrom:
             - configMapRef:
                 name: transmission
