@@ -1,8 +1,6 @@
 # k8sfun
 
-Fun with k8s at home.
-
-This projects sets up an automated home media server in a containerized [k3s](https://github.com/rancher/k3s) cluster. 
+Fun with k8s at home. This projects sets up an automated home media server in a containerized [k3s](https://github.com/rancher/k3s) cluster. 
 
 Table of Contents
 
