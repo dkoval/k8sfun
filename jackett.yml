@@ -54,17 +54,24 @@ spec:
     spec:
       containers:
         - name: jackett
-          image: ghcr.io/linuxserver/jackett
+          image: linuxserver/jackett:version-v0.18.303
           envFrom:
             - configMapRef:
                 name: jackett
           volumeMounts:
             - name: jackett-config
-              mountPath: /config
+              mountPath: /config          
+            - name: jackett-volumes
+              mountPath: /downloads
+              subPath: downloads
       volumes:
         - name: jackett-config
           hostPath:
             path: /mnt/config/jackett
+            type: DirectoryOrCreate
+        - name: jackett-volumes
+          hostPath:
+            path: /mnt/volumes/jackett
             type: DirectoryOrCreate
 
 ---
