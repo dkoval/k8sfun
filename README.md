@@ -1,6 +1,8 @@
 # k8sfun
 
-Automates a home media server setup by spinning up essential applications in a containerized [k3s](https://github.com/rancher/k3s) cluster. 
+Fun with k8s at home.
+
+This projects sets up an automated home media server in a containerized [k3s](https://github.com/rancher/k3s) cluster. 
 
 Table of Contents
 
@@ -18,6 +20,8 @@ Table of Contents
 - helm
 
 ## Install tools
+
+The below table summarizes the tools you need to get installed on your host machine.
 
 | Tool | HOWTO |
 | --- | --- |
