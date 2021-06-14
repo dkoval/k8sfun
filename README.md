@@ -78,7 +78,7 @@ kubectl rollout restart deploy sonarr
 
 ### How do I make Traefik v2 Ingress controller work with `/jackett` subpath?
 
-Set URL Base to `/jackett` in Jackett by editting `$HOME/.config/Jackett/ServerConfig.json` file.
+Set URL Base to `/jackett` in Jackett by editting `$HOME/.config/jackett/Jackett/ServerConfig.json` file.
 
 ```json
 {
