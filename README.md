@@ -9,7 +9,6 @@ Table of Contents
 - [Create a new k3d cluster](#create-a-new-k3d-cluster)
 - [Almost there](#almost-there)
 
-
 ## Prerequisites
 
 - Docker
@@ -67,9 +66,7 @@ Set URL Base to `/sonarr` in Sonarr by editting `$HOME/.config/sonarr/config.xml
 
 ```xml
 <Config>
-  ...
   <UrlBase>/sonarr</UrlBase>
-  ...
 </Config>
 ```
 
@@ -85,9 +82,7 @@ Set URL Base to `/jackett` in Jackett by editting `$HOME/.config/Jackett/ServerC
 
 ```json
 {
-  ...
   "BasePathOverride": "/jackett",
-  ...
 }
 ```
 
