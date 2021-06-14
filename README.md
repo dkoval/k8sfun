@@ -62,7 +62,7 @@ helm install traefik traefik/traefik
 
 ### How do I make Traefik v2 Ingress controller work with `/sonarr` subpath?
 
-Set URL Base to `/sonarr` in Sonarr by editting `$HOME/.config/sonarr/config.xml` file.
+In Sonarr, set base path to `/sonarr` by changing `<UrlBase/>` tag in `$HOME/.config/sonarr/config.xml` file.
 
 ```xml
 <Config>
@@ -78,7 +78,7 @@ kubectl rollout restart deploy sonarr
 
 ### How do I make Traefik v2 Ingress controller work with `/jackett` subpath?
 
-Set URL Base to `/jackett` in Jackett by editting `$HOME/.config/jackett/Jackett/ServerConfig.json` file.
+In Jackett, set base path to `/jackett` by changing `BasePathOverride` property in `$HOME/.config/jackett/Jackett/ServerConfig.json` file.
 
 ```json
 {
