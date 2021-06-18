@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
         - name: jackett
-          image: linuxserver/jackett:version-v0.18.303
+          image: linuxserver/jackett:version-v0.18.354
           envFrom:
             - configMapRef:
                 name: jackett
