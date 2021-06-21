@@ -61,20 +61,12 @@ spec:
           volumeMounts:
             - name: sonarr-config
               mountPath: /config
-            - name: transmission-volume
-              mountPath: /downloads
-              subPath: downloads/complete
             - name: data-volume
-              mountPath: /tv
-              subPath: media/tv
+              mountPath: /data              
       volumes:
         - name: sonarr-config
           hostPath:
             path: /mnt/config/sonarr
-            type: DirectoryOrCreate
-        - name: transmission-volume
-          hostPath:
-            path: /mnt/volumes/transmission
             type: DirectoryOrCreate
         - name: data-volume
           hostPath:
