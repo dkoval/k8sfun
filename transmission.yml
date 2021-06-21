@@ -61,10 +61,10 @@ spec:
           volumeMounts:
             - name: transmission-config
               mountPath: /config
-            - name: transmission-volumes
+            - name: transmission-volume
               mountPath: /downloads
               subPath: downloads
-            - name: transmission-volumes
+            - name: transmission-volume
               mountPath: /watch
               subPath: watch
       volumes:
@@ -72,7 +72,7 @@ spec:
           hostPath:
             path: /mnt/config/transmission
             type: DirectoryOrCreate
-        - name: transmission-volumes
+        - name: transmission-volume
           hostPath:
             path: /mnt/volumes/transmission
             type: DirectoryOrCreate

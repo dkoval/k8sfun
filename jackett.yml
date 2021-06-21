@@ -61,7 +61,7 @@ spec:
           volumeMounts:
             - name: jackett-config
               mountPath: /config          
-            - name: jackett-volumes
+            - name: jackett-volume
               mountPath: /downloads
               subPath: downloads
       volumes:
@@ -69,7 +69,7 @@ spec:
           hostPath:
             path: /mnt/config/jackett
             type: DirectoryOrCreate
-        - name: jackett-volumes
+        - name: jackett-volume
           hostPath:
             path: /mnt/volumes/jackett
             type: DirectoryOrCreate
