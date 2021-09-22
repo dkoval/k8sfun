@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
         - name: jackett
-          image: linuxserver/jackett:version-v0.18.354
+          image: linuxserver/jackett:version-v0.18.789
           envFrom:
             - configMapRef:
                 name: jackett
@@ -67,11 +67,11 @@ spec:
       volumes:
         - name: jackett-config
           hostPath:
-            path: /mnt/config/jackett
+            path: /home/pi/.config/jackett
             type: DirectoryOrCreate
         - name: jackett-volume
           hostPath:
-            path: /mnt/volumes/jackett
+            path: /media/storage/volumes/apps/jackett
             type: DirectoryOrCreate
 
 ---

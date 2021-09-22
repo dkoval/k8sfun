@@ -64,7 +64,7 @@ spec:
       volumes:
         - name: heimdall-config
           hostPath:
-            path: /mnt/config/heimdall
+            path: /home/pi/.config/heimdall
             type: DirectoryOrCreate
 
 ---

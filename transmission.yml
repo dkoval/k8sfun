@@ -54,27 +54,27 @@ spec:
     spec:
       containers:
         - name: transmission
-          image: linuxserver/transmission:3.00-r2-ls91
+          image: linuxserver/transmission:version-3.00-r2
           envFrom:
             - configMapRef:
                 name: transmission
           volumeMounts:
             - name: transmission-config
               mountPath: /config
-            - name: data-volume
+            - name: transmission-volume
               mountPath: /downloads
-              subPath: torrents/downloads
-            - name: data-volume
+              subPath: downloads
+            - name: transmission-volume
               mountPath: /watch
-              subPath: torrents/watch
+              subPath: watch
       volumes:
         - name: transmission-config
           hostPath:
-            path: /mnt/config/transmission
+            path: /home/pi/.config/transmission
             type: DirectoryOrCreate
-        - name: data-volume
+        - name: transmission-volume
           hostPath:
-            path: /mnt/volumes/data
+            path: /media/storage/volumes/data/torrents
             type: DirectoryOrCreate
 
 ---
