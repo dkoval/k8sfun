@@ -41,6 +41,10 @@ k3d cluster create k8sfun \
 --k3s-server-arg "--no-deploy=traefik"
 ```
 
+```shell
+curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644
+```
+
 The above command performs the following:
 
 - Creates a new k3s single-node k3s cluster named `k8sfun`.
