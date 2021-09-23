@@ -50,7 +50,7 @@ spec:
       labels:
         app: overseerr
       annotations:
-        heimdall.cfg: v1
+        overseerr.cfg: v1
     spec:
       containers:
         - name: overseerr
