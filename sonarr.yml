@@ -66,11 +66,11 @@ spec:
       volumes:
         - name: sonarr-config
           hostPath:
-            path: /mnt/config/sonarr
+            path: /home/pi/.config/sonarr
             type: DirectoryOrCreate
         - name: data-volume
           hostPath:
-            path: /mnt/volumes/data
+            path: /media/storage/volumes/data
             type: DirectoryOrCreate
 
 ---
