@@ -7,7 +7,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Install tools](#install-tools)
 - [Create a new k3d cluster](#create-a-new-k3d-cluster)
-- [Almost there](#almost-there)
+- [Almost there](#post-deployment-configuration)
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ helm repo update
 helm install traefik traefik/traefik
 ```
 
-## Almost there
+## Post-deployment configuration
 
 ### How do I make Ingress controller work with `/sonarr` subpath?
 
@@ -79,6 +79,23 @@ Apply changes by doing rolling restart of `sonarr` deployment.
 ```shell
 kubectl rollout restart deployment sonarr
 ```
+
+### How do I make Ingress controller work with `/radarr` subpath?
+
+In Radarr, set base path to `/radarr` by changing `<UrlBase/>` tag in `$HOME/.config/radarr/config.xml` file.
+
+```xml
+<Config>
+  <UrlBase>/radarr</UrlBase>
+</Config>
+```
+
+Apply changes by doing rolling restart of `radarr` deployment.
+
+```shell
+kubectl rollout restart deployment radarr
+```
+
 
 ### How do I make Ingress controller work with `/jackett` subpath?
 
